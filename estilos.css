@@ -102,10 +102,23 @@ main {
   margin-left: 2.5%;
   margin-right: 2.5%;
   display: inline-block;
+  position: relative;
 }
 
 #posts-principais .post .titulo {
   text-shadow: 1px 1px black;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  padding: 10px;
+  top: 20px;
+  left: 0;
+  opacity: 0;
+  transition: all 200ms ease;
+}
+
+#posts-principais .post .titulo:hover {
+  opacity: 1;
+  top: 0;
 }
 
 #posts-principais .post img {
@@ -151,6 +164,8 @@ main {
 }
 
 #tags {
+  position: sticky;
+  top: 0;
   float: right;
   width: 300px;
   background: black;
@@ -161,6 +176,16 @@ main {
 
 #tags h1 {
   margin-bottom: 1em;
+}
+
+#tags span[class^="tag"] {
+  cursor: pointer;
+}
+
+#tags span[class^="tag"]:active {
+  position: relative;
+  top: -2px;
+  left: -2px;
 }
 
 .tag-1,
@@ -279,4 +304,34 @@ footer .texto-rodape {
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+}
+
+.boo {
+  position: absolute;
+  width: 35px;
+  opacity: 0.3;
+  transition: all 200ms ease;
+}
+
+.boo:hover {
+  opacity: 1;
+}
+
+#boo1 {
+  top: 220px;
+  left: 150px;
+}
+
+#boo2 {
+  top: 800px;
+  left: 900px;
+}
+
+#boo3 {
+  top: 430px;
+  left: 240px;
+  transform: scaleX(-1);
 }
